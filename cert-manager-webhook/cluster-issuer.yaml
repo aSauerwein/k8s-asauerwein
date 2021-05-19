@@ -1,0 +1,39 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+
+    # Email address used for ACME registration
+    email: mail@example.com # REPLACE THIS WITH YOUR EMAIL!!!
+
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt-staging
+
+    solvers:
+      - dns01:
+          webhook:
+            groupName: cert-manager-webhook-inwx.smueller18.gitlab.com
+            solverName: inwx
+            config:
+              ttl: 300 # default 300
+              sandbox: false # default false
+
+              # prefer using secrets!
+              # username: USERNAME
+              # password: PASSWORD
+              # otpKey: OTPKEY
+
+              usernameSecretKeyRef:
+                name: inwx-credentials
+                key: username
+              passwordSecretKeyRef:
+                name: inwx-credentials
+                key: password
+              otpKeySecretKeyRef:
+                name: inwx-credentials
+                key: otpKey
