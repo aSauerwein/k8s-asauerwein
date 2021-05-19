@@ -6,3 +6,9 @@ helm:
   version: ^0.4.1
   values: 
     installCRDs: true
+diff:  
+  comparePatches:  
+  - apiVersion: cert-manager.io/v1
+    kind: Certificate
+    jsonPointers: # jsonPointers allows to ignore diffs at certain json path
+    - "/spec/duration"
