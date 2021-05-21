@@ -1,7 +1,7 @@
 defaultNamespace: influx
 helm:
   chart: grafana
-  repo: https://charts.jetstack.io
+  repo: https://grafana.github.io/helm-chart
   releaseName: grafana
   version: ^6.9.1
   values: 
