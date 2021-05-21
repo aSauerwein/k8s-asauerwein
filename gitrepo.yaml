@@ -11,3 +11,8 @@ spec:
   branch: main
   paths:
   - cert-manager
+  - cert-manager-webhook
+  - grafana
+  - influx
+  - mosquitto
+  - telegraf
