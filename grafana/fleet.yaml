@@ -1,0 +1,12 @@
+defaultNamespace: influx
+helm:
+  chart: grafana
+  repo: https://charts.jetstack.io
+  releaseName: grafana
+  version: ^6.9.1
+  values: 
+    persistence:
+      enabled: yes
+    service:
+      type: NodePort
+      nodePort: 30000

@@ -1,0 +1,8 @@
+defaultNamespace: influx
+helm:
+  chart: telegraf
+  repo: https://helm.influxdata.com/
+  releaseName: telegraf
+  version: ^1.7.38
+  valuesFiles: 
+    - telegraf-values.yaml
