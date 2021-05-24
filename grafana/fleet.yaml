@@ -12,7 +12,7 @@ helm:
       hosts:
         - grafana.sauerwein.se
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        cert-manager.io/cluster-issuer: letsencrypt-prod
       tls:
         - hosts:
             - grafana.sauerwein.se
