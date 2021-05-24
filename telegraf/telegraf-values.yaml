@@ -34,10 +34,10 @@ env:
 #   mountPath: /etc/telegraf/conf.d
 #   subPath: influxdb2.conf
 
-
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
-resources: {}
+resources:
+  {}
   # requests:
   #   memory: 128Mi
   #   cpu: 100m
@@ -166,6 +166,11 @@ config:
           - tcp://mosquitto:1883
         # username: DVES_USER
         # password: 5QoschFUUghF44E
+    - vsphere:
+        vcenters: ["https:/esxi.sauerwein.se"]
+        username: "telegraf"
+        password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
+        insecure_skip_verify: true
 
 metrics:
   health:
