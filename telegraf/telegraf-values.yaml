@@ -171,6 +171,10 @@ config:
         username: "telegraf"
         password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
         insecure_skip_verify: true
+        interval: 60s
+        datastore_metric_exclude: ["*"]
+        cluster_metric_exclude: ["*"]
+        datacenter_metric_exclude:  ["*"]
 
 metrics:
   health:
