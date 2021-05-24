@@ -13,6 +13,7 @@ helm:
         - grafana.sauerwein.se
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
+        ingress.kubernetes.io/ssl-redirect: "true"
       tls:
         - hosts:
             - grafana.sauerwein.se
