@@ -172,6 +172,7 @@ config:
         password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
         insecure_skip_verify: true
         interval: 60s
+        force_discover_on_init:  true
         datastore_metric_exclude: ["*"]
         cluster_metric_exclude: ["*"]
         datacenter_metric_exclude:  ["*"]
