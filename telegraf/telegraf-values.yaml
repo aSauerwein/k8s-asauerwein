@@ -167,7 +167,7 @@ config:
         # username: DVES_USER
         # password: 5QoschFUUghF44E
     - vsphere:
-        vcenters: ["https:/esxi.sauerwein.se"]
+        vcenters: ["https://esxi.sauerwein.se"]
         username: "telegraf"
         password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
         insecure_skip_verify: true
