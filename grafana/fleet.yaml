@@ -7,6 +7,7 @@ helm:
   values: 
     persistence:
       enabled: yes
-    service:
-      type: NodePort
-      nodePort: 30000
+    ingress:
+      enabled: yes
+      hosts:
+        - grafana.sauerwein.se
