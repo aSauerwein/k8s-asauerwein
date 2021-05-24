@@ -1,0 +1,6 @@
+defaultNamespace: ingress-nginx
+helm:
+  chart: ingress-nginx
+  repo: https://kubernetes.github.io/ingress-nginx
+  releaseName: ingress-nginx
+  version: ^3.31.0

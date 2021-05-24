@@ -16,3 +16,4 @@ spec:
   - influx
   - mosquitto
   - telegraf
+  - ingress-nginx
