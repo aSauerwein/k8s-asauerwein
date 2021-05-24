@@ -4,7 +4,7 @@ helm:
   repo: https://grafana.github.io/helm-charts
   releaseName: grafana
   version: ^6.9.1
-  values: 
+  values:
     persistence:
       enabled: yes
     ingress:
@@ -13,3 +13,7 @@ helm:
         - grafana.sauerwein.se
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-staging
+      tls:
+        - hosts:
+            - grafana.sauerwein.se
+          secretName: grafana-cert
