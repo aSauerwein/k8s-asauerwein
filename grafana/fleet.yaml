@@ -11,3 +11,5 @@ helm:
       enabled: yes
       hosts:
         - grafana.sauerwein.se
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-staging
