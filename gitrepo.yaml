@@ -16,4 +16,5 @@ spec:
   - influx
   - mosquitto
   - telegraf
+  - metallb
 #  - ingress-nginx
