@@ -39,12 +39,13 @@ kind: Service
 metadata:
   name: mosquitto
 spec:
-  type: NodePort
+  type: LoadBalancer
+  loadBalancerIP: 10.255.100.21
   selector:
     app: mosquitto
   ports:
     - protocol: TCP
-      nodePort: 30010
+      targetPort: 1883
       port: 1883
 ---
 apiVersion: v1
