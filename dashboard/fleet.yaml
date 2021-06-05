@@ -1,0 +1,18 @@
+defaultNamespace: dashboard
+helm:
+  chart: kubernetes-dashboard
+  repo: https://kubernetes.github.io/dashboard/
+  releaseName: kubernetes-dashboard
+  version: ^4.2.0
+  values: 
+    ingress:
+      enabled: yes
+      hosts:
+        - dashboard.sauerwein.se
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        ingress.kubernetes.io/ssl-redirect: "true"
+      tls:
+        - hosts:
+            - dashboard.sauerwein.se
+          secretName: dashboard-cert
