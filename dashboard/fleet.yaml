@@ -4,7 +4,7 @@ helm:
   repo: https://kubernetes.github.io/dashboard/
   releaseName: kubernetes-dashboard
   version: ^4.2.0
-  values: 
+  values:
     ingress:
       enabled: yes
       hosts:
@@ -12,15 +12,16 @@ helm:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+        ingress.kubernetes.io/protocol: "http"
       tls:
         - hosts:
             - dashboard.sauerwein.se
           secretName: dashboard-cert
-diff:  
-  comparePatches:  
-  - apiVersion: v1
-    kind: Secret
-    name: kubernetes-dashboard-key-holder
-    jsonPointers: # jsonPointers allows to ignore diffs at certain json path
-    - "/data"
+    protocolHttp: true
+diff:
+  comparePatches:
+    - apiVersion: v1
+      kind: Secret
+      name: kubernetes-dashboard-key-holder
+      jsonPointers: # jsonPointers allows to ignore diffs at certain json path
+        - "/data"
