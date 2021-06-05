@@ -16,3 +16,10 @@ helm:
         - hosts:
             - dashboard.sauerwein.se
           secretName: dashboard-cert
+diff:  
+  comparePatches:  
+  - apiVersion: v1
+    kind: Secret
+    name: kubernetes-dashboard-key-holder
+    jsonPointers: # jsonPointers allows to ignore diffs at certain json path
+    - "/data"
