@@ -12,11 +12,11 @@ helm:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       tls:
         - hosts:
             - dashboard.sauerwein.se
           secretName: dashboard-cert
-    protocolHttp: True # handle https at the ingress
 diff:  
   comparePatches:  
   - apiVersion: v1
