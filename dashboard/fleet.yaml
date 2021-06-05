@@ -16,6 +16,7 @@ helm:
         - hosts:
             - dashboard.sauerwein.se
           secretName: dashboard-cert
+    protocolHttp: True # handle https at the ingress
 diff:  
   comparePatches:  
   - apiVersion: v1
