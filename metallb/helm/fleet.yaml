@@ -26,4 +26,4 @@ helm:
             - 10.255.100.20-10.255.100.29
     speaker:
       secretName: metallb-speaker-secret
-      secretKey: speaker-secret
+      secretKey: secretkey
