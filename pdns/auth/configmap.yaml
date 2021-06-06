@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ns001
+data:
+  pdns.conf: |+
+    # defense config
+    daemon=no 
+    default-ksk-algorithm=ed25519 
+    default-ttl=1500 
+    default-zsk-algorithm=ed25519 
+    guardian=yes 
+    include-dir=/etc/powerdns/conf.d
+    local-address=0.0.0.0
+    local-port=5353
+    log-dns-queries=no
+    loglevel=5
+    version-string=anonymous
+  db.conf: |+
+    launch=gpgsql
+    gpgsql-host=postgresql.pgsql.svc.cluster.local
+    gpgsql-port=5432
+    gpgsql-dbname=ns001
+    gpgsql-user=ns001
+    gpgsql-password=12345ABCDEF4242
+    gpgsql-dnssec=no
+  api.conf: |+
+    api=yes
+    api-key=12345ABCDEF4242
+  webserver.conf: |+
+    webserver=yes
+    webserver-address=0.0.0.0
+    webserver-allow-from=0.0.0.0/0
+    webserver-password=12345ABCDEF4242
+

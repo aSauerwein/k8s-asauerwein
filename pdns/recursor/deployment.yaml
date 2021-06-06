@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recursor
+spec:
+  selector:
+    matchLabels:
+      app: recursor
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: recursor
+    spec:
+      containers:
+        - name: recursor
+          image: powerdns/pdns-recursor-44:4.4.3
+          securityContext:
+            allowPrivilegeEscalation: false
+          volumeMounts:
+            - name: recursor-conf
+              mountPath: /etc/powerdns/recursor.conf
+              subPath: recursor.conf
+            - name: recursor-conf
+              mountPath: /etc/powerdns/recursor.d/forward-zones.conf
+              subPath: forward-zones.conf
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+      restartPolicy: Always
+      automountServiceAccountToken: false
+      volumes:
+        - name: recursor-conf
+          configMap:
+            name: recursor-conf
+

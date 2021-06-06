@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    metallb.universe.tf/allow-shared-ip: dns
+  name: ns001-udp
+spec:
+  ports:
+    - name: udp-dns
+      port: 53
+      protocol: UDP
+      targetPort: 5353
+  type: LoadBalancer
+  loadBalancerIP: "10.255.100.22"
+  externalTrafficPolicy: Local
+  selector:
+    app: powerdns
