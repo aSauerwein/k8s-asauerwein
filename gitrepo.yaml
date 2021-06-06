@@ -17,4 +17,5 @@ spec:
   - mosquitto
   - telegraf
   - metallb
+#  - dashboard
 #  - ingress-nginx
