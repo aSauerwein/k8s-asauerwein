@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: powerdns-admin
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+  - host: powerdns-admin.sauerwein.se
+    http:
+      paths:
+      - backend:
+          service:
+            name: powerdns-admin
+            port:
+              number: 8000
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - powerdns-admin.sauerwein.se
+    secretName: powerdns-admin-cert

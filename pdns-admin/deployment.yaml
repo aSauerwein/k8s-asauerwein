@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: powerdns-admin
+spec:
+  selector:
+    matchLabels:
+      app: powerdns-admin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: powerdns-admin
+    spec:
+      containers:
+        - name: powerdns-admin
+          image: ngoduykhanh/powerdns-admin:latest
+          env:
+            - name: SQLALCHEMY_DATABASE_URI
+              value: postgresql://ns001:12345ABCDEF4242@postgresql.pgsql.svc.cluster.local/ns001
+            - name: BIND_ADDRESS
+              value: "0.0.0.0:8000"
+          securityContext:
+            allowPrivilegeEscalation: false
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: "250m"
+              memory: "128Mi"
+      restartPolicy: Always
+      automountServiceAccountToken: false
