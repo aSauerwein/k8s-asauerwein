@@ -27,4 +27,3 @@ helm:
     speaker:
       secretName: metallb-speaker-secret
       secretKey: speaker-secret
-      secretValue: JIjulii825Ybu8ZBlQO2HD8HCdWpKbIbQdYBlWboKfdevfKDEsGRkDc6j7cRMpxGnabgm9hgKauT4PJAttBwgawuq3F7QbFGWvfHOz0epsrTowBVWkjU2qPCg6KVPf2ZLXax9QiTfwjHYeHwyaNCHpl5VOZAoqcegZ9HOFcMRAb5d50gJp7GNZYfdbDfpemXTt7BklB0sBk0aAkYDMzWXTo5gLdO0ltqcMgW31GcBMfm30XgmQbx38kFfxtPyZaQ
