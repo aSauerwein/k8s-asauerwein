@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ns001
+  name: powerdns-config
 data:
   pdns.conf: |+
     # defense config
@@ -16,20 +16,4 @@ data:
     log-dns-queries=no
     loglevel=5
     version-string=anonymous
-  db.conf: |+
-    launch=gpgsql
-    gpgsql-host=postgresql.pgsql.svc.cluster.local
-    gpgsql-port=5432
-    gpgsql-dbname=ns001
-    gpgsql-user=ns001
-    gpgsql-password=12345ABCDEF4242
-    gpgsql-dnssec=no
-  api.conf: |+
-    api=yes
-    api-key=12345ABCDEF4242
-  webserver.conf: |+
-    webserver=yes
-    webserver-address=0.0.0.0
-    webserver-allow-from=0.0.0.0/0
-    webserver-password=12345ABCDEF4242
 

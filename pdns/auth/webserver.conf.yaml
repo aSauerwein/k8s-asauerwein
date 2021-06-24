@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: powerdns-webserver
+spec:
+  encryptedData:
+    webserver.conf: AgCvry16hWQqVEKHoH0diuHyh6hY8mIQgirmvIhMi/90Cfct5S6NmBldlm3yqXHmI4+8giHxQ/W6FqE9TBzbMn210PVaC4PVjUruhMc+2lptPG38kmJdtKfagaqZlc7D3aZ8TQE2ADELXv0px/QW0FMRLZhUw86wG+uV8K6bzKg4Yf+/3jFZ9g7jWT8/sa27WB0Qv2lUIf6GFJePF/ac/IQlTPZT+y5pfHiqO2leTW3VaQwp5GaR0xlEUOxaHxnVisB9ve+WMLX6zY0jyNiGwLO5CZx7mJ4maEkESwEf1KuSOrpFznapYq41fIgKzAmU4StmA/UrC1hhgK+B9Aefuzfwy8lx2EQuO2vimSNIPrLCweUy6EO6fGCFM/4Eb/y3+OtHNFPTZBsFsOuwhj1ZRpBlu/vlk2KCdalnxjQGhybCb5GVz2pCLwFwj8kON+i4ITWu7Xbg4rLvOf/F1RtWQQ39vuzirtUS/kxanR9OCdy7Y3kT40bRJV26SfgiYzdOaTbEl26k2LyIK4MowFFCNP0X31Y/DYrg+FHtmeVEnoQRTNjjlyRDrG4glZo9NfgT7hbtdAhvrJoAjf5a5vjABTQTQBaiQOwZbXLnX4PJeZhyUePSaHVS3xS+6Azu3yu+HK20hg69ix8uaLkZbtQoHUONPXoyz6o/YnJ/wiwb3fbFKH5q9JUQMH6PSiMo5SWN4v9DY7Ik7x1hS7L78TeB/GukyeTfNqyOubvz/Jue1nD1ubFdgnUbOvyPrMrFl6pRv+HPY/ve1jMwQXczpqT+81d8LFTGJ7LbPyw6sWpWDQVZYKye9IgqXvOtgNv1rHCIqgJs2bdKIymDF9Nd
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: powerdns-webserver
+      namespace: powerdns
+    type: Opaque
+

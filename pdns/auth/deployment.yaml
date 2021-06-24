@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ns001
+  name: powerdns-auth
 spec:
   selector:
     matchLabels:
@@ -13,27 +13,25 @@ spec:
         app: powerdns
     spec:
       containers:
-        - name: ns001
+        - name: powerdns-auth
           image: powerdns/pdns-auth-44:4.4.1
           command:
             - "pdns_server"
           securityContext:
             allowPrivilegeEscalation: false
           volumeMounts:
-            - name: ns001
+            - name: powerdns-config
               mountPath: /etc/powerdns/pdns.conf
               subPath: pdns.conf
-            - name: ns001
+            - name: powerdns-db
               mountPath: /etc/powerdns/conf.d/db.conf
               subPath: db.conf
-            - name: ns001
+            - name: powerdns-webserver
               mountPath: /etc/powerdns/conf.d/webserver.conf
               subPath: webserver.conf
-            - name: ns001
+            - name: powerdns-api
               mountPath: /etc/powerdns/conf.d/api.conf
               subPath: api.conf
-            # - name: ns001-run
-            #   mountPath: /var/run
           imagePullPolicy: IfNotPresent
           resources:
             limits:
@@ -42,8 +40,15 @@ spec:
       restartPolicy: Always
       automountServiceAccountToken: false
       volumes:
-        - name: ns001
+        - name: powerdns-config
           configMap:
-            name: ns001
-        - name: ns001-run
-          emptyDir: {}
+            name: powerdns-config
+        - name: powerdns-db
+          secret:
+            secretName: powerdns-db
+        - name: powerdns-webserver
+          secret:
+            secretName: powerdns-webserver
+        - name: powerdns-api
+          secret:
+            secretName: powerdns-api

@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: powerdns-db
+spec:
+  encryptedData:
+    db.conf: AgC4gF5LLJMjfJr98BovGZa5T/Xr7BGNwh0m8TAHnFFutJ//7hOC2ndaScalrBvsLHm6H7Ceks9p5bfCUy2cn2j6Y/ZaJNCHH9XZ+GkGtGc4q4hk57+4FL9zc2GPFraEJeTYeE9YcpPindEiOX8pLgR7xhx7ETkPDFoKoLkT+IpjLAzbC7YRTe3HBBsyQX5yUcZV1Iiw9vMA7XJ21FuuWp2NVQrDMmoGNnjG4sWBut3ro/OYnr2pKS1hj/syBI1lsfv3iozz3kyTiSmO8P1Q07D0hD+B6bQiVKKJCYme1+BfXYhiQaPulYd+KUQsB8sJtL29YUI+N8i1Z5h+i+tbrVaAeqiOnNwgCYQJUkbl++sUjefVx1bgZh3Q7LBdafErRUIME5qTxwqnzfM7TChqUnd111Fv4NbxHQZVTe6NhiqrpUpfrq1ZDMYCM2h01TfNdjnK4iXYVjcRK3YFuqqsBySWGmVLwN6zQzSrXeFk81Kzty+0NerfIUwLdNb4sXWS2gH6/H3c9b7wduXAw9ukEpuI80qBg9VQWIMRrL6L2x2QlulAgQ5zTzT2LTP92kwYRISaRVWtLtusvJyOtE6Wqp80D8zbpRkFybU542U+nRGYqPa8lvVu2oAv7K4sVq7M1I4DLUlYgO4uBOzLjYE6B8OF0KCzMb5tMVfmDEMBXIy6Ic7ZM+/hudTmKPKGkklrUQmThinLYLu/wgPlQYDRHdfhMKy0u7vbj/7i2FfD0mWHJIRisPA8KY68b4KqNGlQuMtM88o/K1ZYgNP61e4kgJfr19SA6Wjg9N3pcWJ9uwWCIJQCU+QzsCbbTZAJsOQSV3Blg9WFukgCcJsSBXx5wl6kf02Xd7Nll8YTVpUCxJhDlpemIi8vq2p3RUpFPjPGAu/moBJhLXNUOnRQZUDi1dRvmKkwE9g=
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: powerdns-db
+      namespace: powerdns
+    type: Opaque
+

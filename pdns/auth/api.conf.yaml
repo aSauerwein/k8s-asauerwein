@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: powerdns-api
+spec:
+  encryptedData:
+    api.conf: AgBqR0C1XM8L7guJA9gmYeUSbTrkPCxBcpP+eY3WTJMGm5kNXiJTwVUv52cdYgwaZkxsEPc1i7Nds2rP7RSxv8hEqu+yQ3sk5ULSClSbmmjnrmzKCLDT9Cu3UWY/gnkWlqePUylhs6KKz2qtMu5VO3Ab0lCPUXTBUcGB1Mo6Ub/mtq9GGJZsgXH/c0965xq6ddJSot8QwfDsHEmzixY5QJfi5W9X9rGKElSnZiA/0Es+iPV4FPwCM06z40zDiA4dnGfo6kbO0ngf4DIyRS7PV/0QcVAAQVyyuioLeTY4q33V9Om5dLWqnFo3WCN9ObPqN5DOIijzA83EDzbwaIKEYix+AHHJDsSVgfgc/DBka2Ep/R0250vKOPHxwXD8GmFF2WyHXnodCkXtU6Yqsd84f87ujhV1oltwdsXtgbOLA208le4PVUhUY1Ua3YaGebYxNxqwPcTLaYO06d3M/undRpmQHsqiJsmIX2lXRMP7Nv1CLwE7JOMpbVQLpbQzL8p+pqP9jkaZduNcifI9Ax9MCzyGc3jSAcjKtvs1D90hnblWM1At+fKqiwTM15T8/0NYlAax8p2Yg3sS9yirvKItPP5KEBAAQ6T/LMCVbLPyJYDQlfG/XqFGJ/5G7PwWjRobDIdMfrszd6c6H0oh3omKUeApsBwo/5nBvMPW8VlYGoC0ZTBLkI3maOPc8+QOsFwqonGd8Auhlbunq2F8EcH11u4mQZEmWju+5iNjrIgKNBrRfA==
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: powerdns-api
+      namespace: powerdns
+    type: Opaque
+

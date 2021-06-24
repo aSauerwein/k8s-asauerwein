@@ -18,5 +18,6 @@ spec:
   - telegraf
   - metallb
   - sealed-secrets
+  - pdns
 #  - dashboard
 #  - ingress-nginx

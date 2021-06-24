@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/allow-shared-ip: dns
-  name: ns001-udp
+  name: powerdns-auth-udp
 spec:
   ports:
     - name: udp-dns
