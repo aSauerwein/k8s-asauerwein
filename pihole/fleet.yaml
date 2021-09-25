@@ -8,11 +8,15 @@ helm:
   values:
     persistentVolumeClaim:
       enabled: true
-    serviceWeb:
-      loadBalancerIP: 10.255.100.24
+    ingress:
+      enabled: true
       annotations:
-        metallb.universe.tf/allow-shared-ip: pihole-svc
-      type: LoadBalancer
+        cert-manager.io/cluster-issuer: letsencrypt-prod
+        ingress.kubernetes.io/ssl-redirect: true
+      tls:
+        hosts:
+          - pihole.sauerwein.se
+        secretName: pihole-cert
     serviceDns:
       loadBalancerIP: 10.255.100.24
       annotations:
