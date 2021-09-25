@@ -12,7 +12,7 @@ helm:
       enabled: true
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
-        ingress.kubernetes.io/ssl-redirect: true
+        ingress.kubernetes.io/ssl-redirect: "true"
       hosts:
       - pihole.sauerwein.se
       tls:
