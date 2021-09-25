@@ -13,10 +13,12 @@ helm:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         ingress.kubernetes.io/ssl-redirect: true
+      hosts:
+      - pihole.sauerwein.se
       tls:
-        - hosts:
-            - pihole.sauerwein.se
-          secretName: pihole-cert
+      - hosts:
+          - pihole.sauerwein.se
+        secretName: pihole-cert
     serviceDns:
       loadBalancerIP: 10.255.100.24
       annotations:
