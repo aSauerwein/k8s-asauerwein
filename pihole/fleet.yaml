@@ -6,6 +6,8 @@ helm:
   releaseName: pihole
   #version: ^2.4.1
   values:
+    DNS1: 10.255.100.23
+    DNS2: ""
     persistentVolumeClaim:
       enabled: true
     ingress:
