@@ -1,7 +1,7 @@
 defaultNamespace: pihole
 helm:
   chart: mojo2600/pihole
-  repo: https://mojo2600.github.io/pihole-kubernetes/
+  repo: https://mojo2600.github.io/pihole-kubernetes
   releaseName: pihole
   version: ^2.4.1
   values:
