@@ -17,7 +17,7 @@ helm:
       loadBalancerIP: 10.255.100.24
       annotations:
         metallb.universe.tf/allow-shared-ip: pihole-svc
-      type: LoadBalancers
+      type: LoadBalancer
     podDnsConfig:
       enabled: true
       policy: "None"
