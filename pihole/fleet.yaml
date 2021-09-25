@@ -7,19 +7,19 @@ helm:
   values:
     persistentVolumeClaim:
       enabled: true
-		serviceWeb:
-			loadBalancerIP: 10.255.100.24
-			annotations:
-				metallb.universe.tf/allow-shared-ip: pihole-svc
-			type: LoadBalancer
-		serviceDns:
-			loadBalancerIP: 10.255.100.24
-			annotations:
-				metallb.universe.tf/allow-shared-ip: pihole-svc
-			type: LoadBalancers
-		podDnsConfig:
-			enabled: true
-			policy: "None"
-			nameservers:
-			- 127.0.0.1
-			- 10.255.100.23
+    serviceWeb:
+      loadBalancerIP: 10.255.100.24
+      annotations:
+        metallb.universe.tf/allow-shared-ip: pihole-svc
+      type: LoadBalancer
+    serviceDns:
+      loadBalancerIP: 10.255.100.24
+      annotations:
+        metallb.universe.tf/allow-shared-ip: pihole-svc
+      type: LoadBalancers
+    podDnsConfig:
+      enabled: true
+      policy: "None"
+      nameservers:
+      - 127.0.0.1
+      - 10.255.100.23
