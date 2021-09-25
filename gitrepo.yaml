@@ -19,5 +19,6 @@ spec:
   - metallb
   - sealed-secrets
   - pdns
+  - pihole
 #  - dashboard
 #  - ingress-nginx
