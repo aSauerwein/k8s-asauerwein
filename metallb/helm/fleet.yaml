@@ -1,9 +1,9 @@
 defaultNamespace: metallb
 helm:
-  chart: metallb
-  repo: https://charts.bitnami.com/bitnami
+  chart: metallb/metallb
+  repo: https://metallb.github.io/metallb 
   releaseName: metallb
-  version: ^2.4.0
+  version: ^0.10.2
   values:
     configInline:
       # The address-pools section lists the IP addresses that MetalLB is
