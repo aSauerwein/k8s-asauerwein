@@ -1,0 +1,9 @@
+defaultNamespace: grafana
+helm:
+  chart: loki
+  repo: https://grafana.github.io/helm-charts
+  releaseName: loki
+  version: ^2.6.0
+  valuesFiles:
+  - values.yaml
+
