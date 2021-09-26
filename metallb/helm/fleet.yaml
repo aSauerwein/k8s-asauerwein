@@ -1,9 +1,10 @@
 defaultNamespace: metallb
 helm:
-  chart: metallb/metallb
-  repo: https://metallb.github.io/metallb 
+  # chart: metallb/metallb
+  # repo: https://metallb.github.io/metallb 
+  repo: https://github.com/metallb/metallb/releases/download/metallb-chart-0.10.2/metallb-0.10.2.tgz
   releaseName: metallb
-  version: ^0.10.2
+  # version: ^0.10.2
   values:
     configInline:
       # The address-pools section lists the IP addresses that MetalLB is
