@@ -20,5 +20,6 @@ spec:
   - sealed-secrets
   - pdns
   - pihole
+  - grafana-loki
 #  - dashboard
 #  - ingress-nginx
