@@ -2,7 +2,7 @@ defaultNamespace: grafana
 helm:
   chart: promtail
   repo: https://grafana.github.io/helm-charts
-  releaseName: loki
+  releaseName: promtail
   version: ^3.8.1
   valuesFiles:
   - values.yaml
