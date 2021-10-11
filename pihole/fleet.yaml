@@ -1,10 +1,9 @@
 defaultNamespace: pihole
 helm:
-  #chart: "mojo2600/pihole"
-  #repo: https://mojo2600.github.io/pihole-kubernetes
-  chart: https://github.com/MoJo2600/pihole-kubernetes/releases/download/pihole-2.4.1/pihole-2.4.1.tgz
+  chart: "pihole"
+  repo: https://mojo2600.github.io/pihole-kubernetes
   releaseName: pihole
-  #version: ^2.4.1
+  version: ^2.5.0
   values:
     DNS1: 10.255.100.23
     DNS2: ""
