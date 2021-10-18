@@ -1,8 +1,8 @@
 defaultNamespace: influx
 helm:
-  chart: influxdb
+  chart: influxdb2
   repo: https://helm.influxdata.com/
   releaseName: influxdb
-  version: ^4.9.14
+  version: ^2.0.1
   valuesFiles: 
     - influx-values.yaml
