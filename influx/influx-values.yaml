@@ -80,7 +80,7 @@ persistence:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8086
   targetPort: 8086
   annotations: {}
   labels: {}
@@ -97,6 +97,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     ingress.kubernetes.io/ssl-redirect: true
+  secretName: influxdb-cert
   path: /
 
 ## Pod disruption budget configuration
