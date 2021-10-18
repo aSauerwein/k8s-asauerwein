@@ -146,8 +146,12 @@ config:
   outputs:
     - influxdb:
         urls:
-          - "http://influxdb:8086"
+          - "http://influxdb-influxdb2:8086"
         database: "telegraf"
+        token: "-bOzRPjgqsfVdkxFLP7oFMSlF6_ORSzpFp3k8j6eigBEY_F_XtKAQ1RbcofxqyUs3mbJro3gfH7Yjff6LLkfow=="
+        organization: "influxdata"
+        bucket: "telegraf/autogen"
+
   inputs:
     - statsd:
         service_address: ":8125"
