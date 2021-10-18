@@ -144,7 +144,7 @@ config:
             problem: 2
             critical: 3
   outputs:
-    - influxdb:
+    - influxdb_v2:
         urls:
           - "http://influxdb-influxdb2:8086"
         database: "telegraf"
