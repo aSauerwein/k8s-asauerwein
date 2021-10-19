@@ -96,7 +96,7 @@ ingress:
   hostname: influxdb.sauerwein.se
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    ingress.kubernetes.io/ssl-redirect: true
+    ingress.kubernetes.io/ssl-redirect: "true"
   secretName: influxdb-cert
   path: /
 
