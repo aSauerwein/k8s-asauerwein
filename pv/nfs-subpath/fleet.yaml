@@ -8,3 +8,6 @@ helm:
     nfs:
       server: 10.255.100.100
       path: /volume1/server
+    storageClass:
+      create: True
+      defaultClass: True
