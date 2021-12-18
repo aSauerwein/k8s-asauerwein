@@ -1,0 +1,10 @@
+defaultNamespace: nfs
+helm:
+  chart: "nfs-subdir-external-provisioner"
+  repo: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+  releaseName: nfs-subdir-external-provisioner
+  version: ^4.0.14
+  values:
+    nfs:
+      server: 10.255.100.100
+      path: /volume1/server
