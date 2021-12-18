@@ -5,6 +5,13 @@ helm:
   releaseName: pihole
   version: ^2.5.0
   values:
+    resources:
+      limits:
+       cpu: 100m
+       memory: 128Mi
+      requests:
+       cpu: 100m
+       memory: 128Mi
     DNS1: 10.255.100.23
     DNS2: ""
     persistentVolumeClaim:
@@ -30,4 +37,4 @@ helm:
       policy: "None"
       nameservers:
       - 127.0.0.1
-      - 10.255.100.23
+      - 208.67.222.222
