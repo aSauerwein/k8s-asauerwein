@@ -65,7 +65,7 @@ tolerations: []
 
 service:
   enabled: true
-  type: ClusterIP
+  type: LoadBalancer
   annotations: {}
 
 rbac:
@@ -146,39 +146,33 @@ config:
   outputs:
     - influxdb_v2:
         urls:
-          - "http://influxdb-influxdb2:8086"
+          - "http://influxdb-influxdb2.influx.svc.cluster.local:8086"
         token: "-bOzRPjgqsfVdkxFLP7oFMSlF6_ORSzpFp3k8j6eigBEY_F_XtKAQ1RbcofxqyUs3mbJro3gfH7Yjff6LLkfow=="
         organization: "influxdata"
         bucket: "telegraf/autogen"
 
   inputs:
-    - statsd:
-        service_address: ":8125"
-        percentiles:
-          - 50
-          - 95
-          - 99
-        metric_separator: "_"
-        allowed_pending_messages: 10000
-        percentile_limit: 1000
     - mqtt_consumer:
         data_format: json
         topics:
           - "tele/+/SENSOR" # energy consumption data published by tasmota
         servers:
-          - tcp://mosquitto:1883
+          - tcp://mosquitto.mosquitto.svc.cluster.local:1883
         # username: DVES_USER
         # password: 5QoschFUUghF44E
-    - vsphere:
-        vcenters: ["https://esxi.sauerwein.se"]
-        username: "telegraf"
-        password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
-        insecure_skip_verify: true
-        interval: 60s
-        force_discover_on_init:  true
-        datastore_metric_exclude: ["*"]
-        cluster_metric_exclude: ["*"]
-        datacenter_metric_exclude:  ["*"]
+    # - vsphere:
+    #     vcenters: ["https://esxi.sauerwein.se"]
+    #     username: "telegraf"
+    #     password: "uUvqrv!Nc!FT!8Zq!*Q3SJs*cFA84>"
+    #     insecure_skip_verify: true
+    #     interval: 60s
+    #     force_discover_on_init:  true
+    #     datastore_metric_exclude: ["*"]
+    #     cluster_metric_exclude: ["*"]
+    #     datacenter_metric_exclude:  ["*"]
+    - syslog:
+        server: "tcp://:6514"
+
 
 metrics:
   health:
