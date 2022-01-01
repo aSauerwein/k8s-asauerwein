@@ -11,3 +11,4 @@ helm:
     storageClass:
       create: True
       defaultClass: True
+      reclaimPolicy: 
