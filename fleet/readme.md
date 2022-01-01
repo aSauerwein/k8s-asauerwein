@@ -4,13 +4,13 @@ https://github.com/rancher/fleet/releases
 * install fleet crd
 ```
 helm -n fleet-system install --create-namespace --wait \
-    fleet-crd https://github.com/rancher/fleet/releases/download/v0.3.5/fleet-crd-0.3.5.tgz
+    fleet-crd https://github.com/rancher/fleet/releases/download/v0.3.8/fleet-crd-0.3.8.tgz
 ```
 
 * install fleet controller
 ```
 helm -n fleet-system install --create-namespace --wait \
-    fleet https://github.com/rancher/fleet/releases/download/v0.3.5/fleet-0.3.5.tgzk 
+    fleet https://github.com/rancher/fleet/releases/download/v0.3.8/fleet-0.3.8.tgz
 ```
 
 * register git repo
