@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rsyslog
+spec:
+  type: LoadBalancer
+  ports:
+  - name: syslog
+    port: 514
+    protocol: UDP
+    targetPort: 514
+  selector:
+    app.kubernetes.io/instance: rsyslog
+    app.kubernetes.io/name: rsyslog

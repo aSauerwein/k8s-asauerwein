@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: rsyslog
+    app.kubernetes.io/name: rsyslog
+  name: rsyslog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: rsyslog
+      app.kubernetes.io/name: rsyslog
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: rsyslog
+        app.kubernetes.io/name: rsyslog
+    spec:
+      containers:
+      - image: rsyslog/syslog_appliance_alpine
+        name: syslog
+        env:
+        - name: RSYSLOG_CONF
+          value: /config/rsyslog.conf
+        volumeMounts:
+        - mountPath: /config
+          name: config
+        - mountPath: /work
+          name: work
+        - mountPath: /log
+          name: log
+      - image: telegraf:1.21.1
+        name: telegraf
+        volumeMounts:
+        - mountPath: /log
+          name: log
+        - mountPath: /etc/telegraf
+          name: telegraf-syslog
+      volumes:
+        - name: config
+          configMap:
+            name: rsyslog
+        - name: telegraf-syslog
+          configMap:
+            name: telegraf-syslog
+        - name: work
+          emptyDir: {}
+        - name: log
+          emptyDir: {}
