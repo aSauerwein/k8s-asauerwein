@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: thousandeyes
+  name: thousandeyes
+  namespace: thousandeyes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thousandeyes
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: thousandeyes
+    spec:
+      containers:
+      - image: thousandeyes/enterprise-agent
+        name: enterprise-agent
+        command: 
+        - /sbin/my_init
+        env:
+        - name: TEAGENT_ACCOUNT_TOKEN
+          value: 5i5zyr0foayoa3z3epx2djpcmv1br1jh
+        - name: TEAGENT_INET
+          value: "4"
+        securityContext:
+          capabilities:
+            add: ["NET_ADMIN", "SYS_ADMIN"]
+        volumeMounts:
+        - mountPath: /var/log/agent
+          name: agent-log
+      volumes:
+      - name: agent-log
+        persistentVolumeClaim:
+          claimName: thousandeyes-pvc
+

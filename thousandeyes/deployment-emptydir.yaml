@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: thousandeyes
+  name: thousandeyes
+  namespace: thousandeyes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thousandeyes
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: thousandeyes
+    spec:
+      hostname: k3s-andi
+      containers:
+      - image: thousandeyes/enterprise-agent
+        name: enterprise-agent
+        command: 
+        - /sbin/my_init
+        env:
+        - name: TEAGENT_ACCOUNT_TOKEN
+          value: y3h87ynft7uolsm0rkusm800033ila1r
+        - name: TEAGENT_INET
+          value: "4"
+        securityContext:
+          capabilities:
+            add: ["NET_ADMIN", "SYS_ADMIN"]
+        volumeMounts:
+        - mountPath: /var/log/agent
+          name: agent-log
+        resources:
+            limits:
+              memory: 2Gi
+              cpu: 1
+            requests:
+              memory: 500Mi
+              cpu: 500m
+      volumes:
+      - name: agent-log
+        emptyDir: {}
