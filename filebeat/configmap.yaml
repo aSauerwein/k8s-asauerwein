@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  filebeat.yml: |-
+    filebeat.modules:
+    - module: cisco
+      meraki:
+        enabled: true
+        var.syslog_port: 9525
+        var.input: udp
+        var.syslog_host: 0.0.0.0
+    output.elasticsearch:
+      hosts: ["elasticsearch-master.elk.svc.cluster.local:9200"]
+      username: '${ELASTICSEARCH_USERNAME:}'
+      password: '${ELASTICSEARCH_PASSWORD:}'
+
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: filebeat-syslog
+  namespace: elk

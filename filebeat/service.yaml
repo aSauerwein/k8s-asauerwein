@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: filebeat-syslog
+  name: filebeat-syslog
+  namespace: elk
+spec:
+  ports:
+  - port: 9525
+    protocol: UDP
+    targetPort: 9525
+  selector:
+    app: filebeat-syslog
+  type: LoadBalancer

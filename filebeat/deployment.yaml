@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: filebeat-syslog
+  name: filebeat-syslog
+  namespace: elk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filebeat-syslog
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: filebeat-syslog
+    spec:
+      containers:
+      - image: docker.elastic.co/beats/filebeat:7.16.2
+        name: filebeat
+        env:
+        - name: ELASTICSEARCH_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: elastic-credentials
+              key: username
+        - name: ELASTICSEARCH_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: elastic-credentials
+              key: password
+        volumeMounts:
+        - mountPath: /usr/share/filebeat/filebeat.yml
+          name: filebeat-cm
+          readOnly: true
+          subPath: filebeat.yml
+      volumes:
+        - name: filebeat-cm
+          configMap:
+            name: filebeat-syslog
+            items:
+            - key: "filebeat.yml"
+              path: "filebeat.yml"
+
