@@ -16,3 +16,8 @@ curl -XPUT 'localhost:9200/_settings' -H "Content-Type: application/json" -d '
     }'
 
 curl http://127.0.0.1:9200/_cat/indices?v
+
+note to myself 29.01.2022
+basic security on kubernetes is unneccesarry difficult
+
+k create secret generic elastic-credentials --from-literal username=kibana_system --from-literal password=m9ku7moWO8NJZCZOIB4g
