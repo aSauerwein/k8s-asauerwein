@@ -8,4 +8,4 @@ helm:
     installCRDs: true
     extraArgs:
      -  --dns01-recursive-nameservers-only
-     -  --dns01-self-check-nameservers=8.8.8.8:53
+     -  --dns01-recursive-nameservers=8.8.8.8:53,8.8.4.4:53
