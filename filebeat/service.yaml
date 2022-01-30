@@ -10,11 +10,11 @@ spec:
   - port: 9525
     protocol: UDP
     targetPort: 9525
-    name: udp-Meraki
+    name: udp-meraki
   - port: 9000
     protocol: UDP
     targetPort: 9000
-    name: udp-Synology
+    name: udp-synology
   selector:
     app: filebeat-syslog
   type: LoadBalancer
