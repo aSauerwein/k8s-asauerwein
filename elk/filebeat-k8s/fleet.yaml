@@ -1,0 +1,8 @@
+defaultNamespace: elk
+helm:
+  chart: elasticsearch
+  repo: https://helm.elastic.co
+  releaseName: elasticsearch
+  version: ^7.16.2
+  valuesFiles: 
+    - values.yaml
