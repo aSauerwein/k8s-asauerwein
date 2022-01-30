@@ -6,6 +6,6 @@
     "fileMatch": ["\\.yaml$"]
   },
   "helm-values": {
-    "fileMatch": ["\\.*-values.yaml$"]
+    "fileMatch": [".*-values\\.yaml$"]
   }
 }
