@@ -4,6 +4,7 @@ data:
     filebeat.inputs:
     - type: syslog
       format: rfc3164
+      timezone: Europe/Vienna
       protocol.udp:
         host: "0.0.0.0:9000"
     filebeat.modules:
