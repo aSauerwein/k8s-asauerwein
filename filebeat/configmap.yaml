@@ -1,6 +1,11 @@
 apiVersion: v1
 data:
   filebeat.yml: |-
+    filebeat.inputs:
+    - type: syslog
+      format: rfc3164
+      protocol.udp:
+        host: "0.0.0.0:9000"
     filebeat.modules:
     - module: cisco
       meraki:
