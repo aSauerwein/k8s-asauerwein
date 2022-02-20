@@ -12,14 +12,17 @@ spec:
   paths:
   - cert-manager
   - cert-manager-webhook
-  - grafana
-  - influx
+#  - grafana
+#  - influx
   - mosquitto
-  - telegraf
+#  - telegraf
   - metallb
-  - sealed-secrets
-  - pdns
+#  - sealed-secrets
+#  - pdns
   - pihole
-  - grafana-loki
+  - pv
+#  - grafana-loki
 #  - dashboard
 #  - ingress-nginx
+  - elk
+  - filebeat
