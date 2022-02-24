@@ -12,8 +12,8 @@ helm:
       requests:
        cpu: 100m
        memory: 128Mi
-    DNS1: 10.255.100.23
-    DNS2: ""
+    DNS1: 208.67.222.222
+    DNS2: 208.67.220.220
     persistentVolumeClaim:
       enabled: true
     ingress:
