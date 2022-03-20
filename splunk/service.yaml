@@ -12,7 +12,7 @@ spec:
     protocol: TCP
     targetPort: 8000
   - port: 8088
-    name: hec
+    name: https-hec
     protocol: TCP
     targetPort: 8088
   selector:

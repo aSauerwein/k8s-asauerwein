@@ -25,7 +25,7 @@ spec:
       paths:
       - backend:
           service:
-            name: splunk
+            name: https-hec
             port:
               name: hec
         path: /
