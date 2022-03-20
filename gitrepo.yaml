@@ -24,5 +24,6 @@ spec:
 #  - grafana-loki
 #  - dashboard
 #  - ingress-nginx
-  - elk
+#  - elk
   - filebeat
+  - splunk
