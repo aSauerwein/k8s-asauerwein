@@ -42,8 +42,11 @@ spec:
             cpu: 100m
             memory: 128Mi
         ports:
-        - containerPort: 80
+        - containerPort: 8000
           name: http
+          protocol: TCP
+        - containerPort: 8088
+          name: hec
           protocol: TCP
       volumes:
       - name: data

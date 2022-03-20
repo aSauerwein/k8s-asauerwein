@@ -20,7 +20,18 @@ spec:
               name: http
         path: /
         pathType: ImplementationSpecific
+  - host: hec.sauerwein.se
+    http:
+      paths:
+      - backend:
+          service:
+            name: splunk
+            port:
+              name: hec
+        path: /
+        pathType: ImplementationSpecific
   tls:
   - hosts:
     - splunk.sauerwein.se
+    - hec.sauerwein.se
     secretName: splunk-cert

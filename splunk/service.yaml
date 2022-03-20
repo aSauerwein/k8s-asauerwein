@@ -11,6 +11,10 @@ spec:
     name: http
     protocol: TCP
     targetPort: 8000
+  - port: 8088
+    name: hec
+    protocol: TCP
+    targetPort: 8088
   selector:
     app: splunk
 status:
