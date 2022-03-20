@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: splunk
+  name: splunk
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: splunk
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: splunk
+    spec:
+      containers:
+      - image: splunk/splunk:8.2
+        name: splunk
+        env:
+        - name: SPLUNK_START_ARGS
+          value: --accept-license
+        # - name: SPLUNK_HTTP_ENABLESSL
+        #   value: "true"
+        resources:
+          limits:
+            cpu: 500m
+            memory: 500Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
