@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: splunk-mqtt
+  name: splunk-mqtt
+  namespace: splunk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: splunk-mqtt
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: splunk-mqtt
+    spec:
+      containers:
+      - image: asauerwein/splunk-mqtt:0.1.0-alpha
+        name: splunk-mqtt
+        env:
+        - name: BROKER
+          value: tcp://mosquitto.mosquitto.svc.cluster.local:1883
+        - name: HEC_URL
+          value: http://splunk.splunk.svc.cluster.local:8088
+        - name: HEC_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: splunk-mqtt
+              key: hec-token
+        - name: TOPICS
+          value: "tele/+/SENSOR"
+        - name: WRITE_TO_CONSOLE
+          value: "true"
+        - name: WRITE_TO_SPLUNK
+          value: "true"
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 10Mi
