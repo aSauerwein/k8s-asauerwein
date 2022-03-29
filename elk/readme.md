@@ -21,3 +21,9 @@ note to myself 29.01.2022
 basic security on kubernetes is unneccesarry difficult
 
 k create secret generic elastic-credentials --from-literal username=kibana_system --from-literal password=m9ku7moWO8NJZCZOIB4g
+
+# troubleshooting fleet
+force update:
+```
+kubectl patch gitrepos.fleet.cattle.io -n fleet-local k8s-asauerwein -p '{"spec":{"forceSyncGeneration":'$(($(kubectl get gitrepos.fleet.cattle.io -n fleet-local k8s-asauerwein  -o jsonpath={.spec.forceSyncGeneration})+1))}}'' --type=merge
+```

@@ -2,29 +2,12 @@ kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
 metadata:
   # Any name can be used here
-  name: k8s-asauerwein
+  name: k8s-asauerwein-test
   # For single cluster use fleet-local, otherwise use the namespace of
   # your choosing
   namespace: fleet-local
 spec:
   repo: https://github.com/aSauerwein/k8s-asauerwein
-  branch: main
+  branch: statefulset
   paths:
-  - cert-manager
-  - cert-manager-webhook
-#  - grafana
-#  - influx
-  - mosquitto
-#  - telegraf
-  - metallb
-#  - sealed-secrets
-#  - pdns
-  - pihole
-  - pv
-#  - grafana-loki
-#  - dashboard
-#  - ingress-nginx
-#  - elk
-#  - filebeat
-  - splunk
-  - splunk-mqtt
+  - statefulset
