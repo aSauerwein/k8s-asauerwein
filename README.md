@@ -19,6 +19,14 @@ disable:
 
 * copy /etc/rancher/k3s/k3s.yaml to your local pc to access k3s
 
+## k3s upgrade
+https://rancher.com/docs/k3s/latest/en/upgrades/
+```
+curl -sfL https://get.k3s.io | sh -
+```
+
+
+
 ## troubleshooting
 corrupt k3s db -> recover with sqlite tools
 https://stackoverflow.com/questions/18259692/how-to-recover-a-corrupt-sqlite3-database/57872238#57872238
