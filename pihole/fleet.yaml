@@ -3,8 +3,15 @@ helm:
   chart: "pihole"
   repo: https://mojo2600.github.io/pihole-kubernetes
   releaseName: pihole
-  version: ^2.5.0
+  version: ^2.9.0
   values:
+    image:
+      # -- the repostory to pull the image from
+      repository: "pihole/pihole"
+      # -- the docker tag, if left empty it will get it from the chart's appVersion
+      tag: "2022.05"
+      # -- the pull policy
+      pullPolicy: IfNotPresent
     resources:
       limits:
        cpu: 100m
