@@ -30,13 +30,13 @@ spec:
               name: splunk-credentials
               key: password
         - name: SPLUNK_LICENSE_URI
-          value: /run/secrets
+          value: /run/secrets/splunk_license
         volumeMounts:
         - mountPath: /opt/splunk/var
           name: data
         - mountPath: /opt/splunk/etc
           name: etc
-        - mountPath: /run/secrets/splunk_license
+        - mountPath: /run/secrets
           name: license
           readOnly: true
         resources:
