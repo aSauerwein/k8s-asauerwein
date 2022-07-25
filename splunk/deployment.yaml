@@ -29,11 +29,16 @@ spec:
             secretKeyRef:
               name: splunk-credentials
               key: password
+        - name: SPLUNK_LICENSE_URI
+          value: /run/secrets/splunk_license
         volumeMounts:
         - mountPath: /opt/splunk/var
           name: data
         - mountPath: /opt/splunk/etc
           name: etc
+        - mountPath: /run/secrets/splunk_license
+          name: license
+          readOnly: true
         resources:
           limits:
             cpu: 500m
@@ -55,3 +60,6 @@ spec:
       - name: etc
         persistentVolumeClaim:
           claimName: splunk-etc
+      - name: license
+        secret:
+          secretName: splunk-license
