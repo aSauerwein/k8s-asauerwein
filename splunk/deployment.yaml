@@ -65,3 +65,4 @@ spec:
           secretName: splunk-license
           items:
           - key: splunk_license
+            path: splunk_license
