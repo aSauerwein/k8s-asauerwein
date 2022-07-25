@@ -64,4 +64,4 @@ spec:
         secret:
           secretName: splunk-license
           items:
-            key: splunk_license
+          - key: splunk_license
