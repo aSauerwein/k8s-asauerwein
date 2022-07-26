@@ -36,8 +36,9 @@ spec:
           name: data
         - mountPath: /opt/splunk/etc
           name: etc
-        - mountPath: /run/secrets
-          name: license
+        - name: license
+          mountPath: /run/secrets/splunk_license
+          subPath: splunk_license
           readOnly: true
         resources:
           limits:
@@ -63,6 +64,3 @@ spec:
       - name: license
         secret:
           secretName: splunk-license
-          items:
-          - key: splunk_license
-            path: splunk_license
