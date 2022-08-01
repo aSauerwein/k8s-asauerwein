@@ -4,7 +4,7 @@ helm:
   repo: https://metallb.github.io/metallb 
   # chart: https://github.com/metallb/metallb/releases/download/metallb-chart-0.10.2/metallb-0.10.2.tgz
   releaseName: metallb
-  version: ^0.10.2
+  version: ^0.13.0
   valuesFiles:
   - values.yaml
 
