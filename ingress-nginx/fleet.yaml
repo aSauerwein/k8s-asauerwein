@@ -3,7 +3,7 @@ helm:
   chart: ingress-nginx
   repo: https://kubernetes.github.io/ingress-nginx
   releaseName: ingress-nginx
-  version: ^3.31.0
+  version: ^4.0.0
   values:
     controller:
       service:
