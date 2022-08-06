@@ -6,12 +6,14 @@
     "fileMatch": [
       "\\.yaml$"
     ],
-    "automerge": true
+    "automerge": true,
+    "pinDigests": true
   },
   "helm-values": {
     "fileMatch": [
       ".*-values\\.yaml$"
     ],
-    "automerge": true
+    "automerge": true,
+    "pinDigests": true
   }
 }
