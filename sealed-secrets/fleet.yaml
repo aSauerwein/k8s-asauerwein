@@ -3,4 +3,4 @@ helm:
   chart: sealed-secrets
   repo: https://bitnami-labs.github.io/sealed-secrets/
   releaseName: sealed-secrets-controller
-  version: ^1.16.1
+  version: ^2.0.0
