@@ -26,5 +26,5 @@ spec:
 #  - ingress-nginx
 #  - elk
 #  - filebeat
-  - splunk
-  - splunk-mqtt
+#  - splunk
+#  - splunk-mqtt
