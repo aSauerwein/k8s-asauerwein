@@ -1,3 +1,4 @@
+replicaCount: 2
 image:
   # -- the repostory to pull the image from
   repository: "pihole/pihole"
@@ -6,16 +7,16 @@ image:
   # -- the pull policy
   pullPolicy: IfNotPresent
 resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
   requests:
     cpu: 100m
     memory: 128Mi
 DNS1: 208.67.222.222
 DNS2: 208.67.220.220
 persistentVolumeClaim:
-  enabled: true
+  enabled: false
 ingress:
   enabled: true
   annotations:
@@ -38,3 +39,8 @@ podDnsConfig:
   nameservers:
   - 127.0.0.1
   - 208.67.222.222
+dnsmasq:
+  customDnsEntries:
+  - address=/pihole.sauerwein.se/10.255.100.10
+extraEnvVars:
+  QUERY_LOGGING: "false"
