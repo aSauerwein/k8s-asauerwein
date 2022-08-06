@@ -19,7 +19,7 @@ spec:
         app.kubernetes.io/name: rsyslog
     spec:
       containers:
-      - image: rsyslog/syslog_appliance_alpine
+      - image: rsyslog/syslog_appliance_alpine@sha256:c0dd7cad9ff3234967ff59879590175b7590e8a5f5621ec49a85aff546b44a3b
         name: syslog
         env:
         - name: RSYSLOG_CONF
@@ -31,7 +31,7 @@ spec:
           name: work
         - mountPath: /log
           name: log
-      - image: telegraf:1.23.3
+      - image: telegraf:1.23.3@sha256:7e5b3032f3f1cee0a0deb5d38c664d28659ee24ee793fbc8555e60e083590ddc
         name: telegraf
         volumeMounts:
         - mountPath: /log
