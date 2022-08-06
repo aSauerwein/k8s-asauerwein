@@ -17,7 +17,7 @@ spec:
         app: splunk-mqtt
     spec:
       containers:
-      - image: asauerwein/splunk-mqtt:0.1.1-alpha
+      - image: asauerwein/splunk-mqtt:0.1.1-alpha@sha256:ff70932dcda17c6a48388ca488bcc697245ec8395db5161ae8fc299b9e1318a6
         name: splunk-mqtt
         env:
         - name: BROKER
