@@ -4,44 +4,5 @@ helm:
   repo: https://mojo2600.github.io/pihole-kubernetes
   releaseName: pihole
   version: ^2.9.0
-  values:
-    image:
-      # -- the repostory to pull the image from
-      repository: "pihole/pihole"
-      # -- the docker tag, if left empty it will get it from the chart's appVersion
-      tag: "2022.05"
-      # -- the pull policy
-      pullPolicy: IfNotPresent
-    resources:
-      limits:
-       cpu: 100m
-       memory: 128Mi
-      requests:
-       cpu: 100m
-       memory: 128Mi
-    DNS1: 208.67.222.222
-    DNS2: 208.67.220.220
-    persistentVolumeClaim:
-      enabled: true
-    ingress:
-      enabled: true
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-prod
-        ingress.kubernetes.io/ssl-redirect: "true"
-      hosts:
-      - pihole.sauerwein.se
-      tls:
-      - hosts:
-          - pihole.sauerwein.se
-        secretName: pihole-cert
-    serviceDns:
-      loadBalancerIP: 10.255.100.24
-      annotations:
-        metallb.universe.tf/allow-shared-ip: pihole-svc
-      type: LoadBalancer
-    podDnsConfig:
-      enabled: true
-      policy: "None"
-      nameservers:
-      - 127.0.0.1
-      - 208.67.222.222
+  valuesFiles:
+  - values.yaml
