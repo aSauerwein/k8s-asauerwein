@@ -3,9 +3,15 @@
     "config:base"
   ],
   "kubernetes": {
-    "fileMatch": ["\\.yaml$"]
+    "fileMatch": [
+      "\\.yaml$"
+    ],
+    "automerge": true
   },
   "helm-values": {
-    "fileMatch": [".*-values\\.yaml$"]
+    "fileMatch": [
+      ".*-values\\.yaml$"
+    ],
+    "automerge": true
   }
 }
