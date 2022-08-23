@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: recursor
-          image: powerdns/pdns-recursor-45:4.5.9@sha256:9dd493e6ba63e610fd930ab4cf78c43af8cd6c400c702efbb3b6c45d9cf93f18
+          image: powerdns/pdns-recursor-45:4.5.10@sha256:7efeeed44272e80f8310d24a7269ee88a9ba857d2ecad38546c6334542edc96e
           securityContext:
             allowPrivilegeEscalation: false
           volumeMounts:
