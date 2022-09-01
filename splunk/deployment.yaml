@@ -17,7 +17,7 @@ spec:
         app: splunk
     spec:
       containers:
-      - image: splunk/splunk:9.0.0@sha256:dc97f8a61f947deb52648c3b3ea48b765cdbac5fdb171479d0961f8d80b6dcce
+      - image: splunk/splunk:9.0.1@sha256:101ec4332d6b59c630a138842bc06848471264a6264c4bb5e1de53071809029d
         name: splunk
         env:
         - name: SPLUNK_START_ARGS
