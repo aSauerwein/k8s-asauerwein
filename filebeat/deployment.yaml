@@ -17,7 +17,7 @@ spec:
         app: filebeat-syslog
     spec:
       containers:
-      - image: docker.elastic.co/beats/filebeat:8.4.3@sha256:3f1083922f2bbf25f49497ebf2a2cd3511ce2abcddea98e19c305bd248cfa8be
+      - image: docker.elastic.co/beats/filebeat:8.5.0@sha256:1047310fdc9d95551427d462162ef35aead1a59e96f0e8edc81e99cefd8c3445
         name: filebeat
         env:
         - name: ELASTICSEARCH_USERNAME
