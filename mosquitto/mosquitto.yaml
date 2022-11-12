@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: mosquitto
-        image: eclipse-mosquitto@sha256:bf213a89580591182dfe05de5e2aa3de186c481ec21ef045befb57b0e89a20d6
+        image: eclipse-mosquitto@sha256:29c92f9144d4e65f7e647694d4b6aa7f0ac6a995bd102251ea05f7edf258ad20
         imagePullPolicy: Always
         resources:
           limits:
