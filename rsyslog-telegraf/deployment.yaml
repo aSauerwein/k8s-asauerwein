@@ -31,7 +31,7 @@ spec:
           name: work
         - mountPath: /log
           name: log
-      - image: telegraf:1.24.3@sha256:233528af8c314e86655bd6050796ab77928abed5dc28fdf18aead055bd956b18
+      - image: telegraf:1.24.3@sha256:89ad64fb54b836d6be94b8f6a80651cdc9fd74fa5843ceab3f459f0cf510addf
         name: telegraf
         volumeMounts:
         - mountPath: /log
