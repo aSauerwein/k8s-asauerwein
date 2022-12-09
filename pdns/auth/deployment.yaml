@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: powerdns-auth
-          image: powerdns/pdns-auth-45:4.5.5@sha256:3ac13341b99132ab5321fe8ab71b6448e8d187dca4c74e6892d58ad9c5457243
+          image: powerdns/pdns-auth-45:4.5.5@sha256:086998a910ab7885d35679bfadd00a2167409c31920bbd0d5d0034cff4cb3919
           command:
             - "pdns_server"
           securityContext:
