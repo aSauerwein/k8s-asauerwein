@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: powerdns-admin
-          image: ngoduykhanh/powerdns-admin:latest@sha256:ab8b3e81a6367523930a4c47f9f05b3692d3382356ecd0038f2169ed27a47e60
+          image: ngoduykhanh/powerdns-admin:latest@sha256:2d6dd124a5194532f6d6b73d26eb13f95f14891897798e59676e9f714cbc1b92
           env:
             - name: SQLALCHEMY_DATABASE_URI
               value: postgresql://ns001:12345ABCDEF4242@postgresql.pgsql.svc.cluster.local/ns001
