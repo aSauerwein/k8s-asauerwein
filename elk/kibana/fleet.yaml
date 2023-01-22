@@ -3,6 +3,6 @@ helm:
   chart: kibana
   repo: https://helm.elastic.co
   releaseName: kibana
-  version: ^7.16.2
+  version: ^8.0.0
   valuesFiles: 
     - values.yaml
