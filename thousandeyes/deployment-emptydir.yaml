@@ -20,7 +20,7 @@ spec:
     spec:
       hostname: k3s-andi
       containers:
-      - image: thousandeyes/enterprise-agent@sha256:03dfe3cd989794741ddd716cee8e4433e1e429827ed90ef4ca9dc8ed4f47cbd9
+      - image: thousandeyes/enterprise-agent@sha256:6ecae484e5ddd4b58676494722fdffd59c8de0600e8720a9eaad66de0c42c2f2
         name: enterprise-agent
         command: 
         - /sbin/my_init
