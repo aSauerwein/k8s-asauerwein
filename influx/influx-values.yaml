@@ -1,6 +1,6 @@
 image:
   repository: influxdb
-  tag: 2.6.1-alpine@sha256:8023563cb2863924cfeef108edb8e206143880e1d75a695448a2ead052200cf8
+  tag: 2.6.1-alpine@sha256:0db3d6571a3b139112c8b414a87d78993dd4915180020363da791fedc392b849
   pullPolicy: IfNotPresent
 
 podAnnotations: {}
