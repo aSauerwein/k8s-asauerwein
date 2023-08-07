@@ -1,22 +1,17 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended",
+    "default:automergeMinor",
+    "default:pinDigestsDisabled"
   ],
   "kubernetes": {
     "fileMatch": [
       "\\.yaml$"
-    ],
-    "automerge": true,
-    "pinDigests": true
-  },
-  "fleet": {
-    "automerge": true
+    ]
   },
   "helm-values": {
     "fileMatch": [
       ".*-values\\.yaml$"
-    ],
-    "automerge": true,
-    "pinDigests": true
+    ]
   }
 }
