@@ -3,7 +3,7 @@ helm:
   chart: kubernetes-dashboard
   repo: https://kubernetes.github.io/dashboard/
   releaseName: kubernetes-dashboard
-  version: ^5.0.0
+  version: ^7.0.0
   values:
     ingress:
       enabled: yes
