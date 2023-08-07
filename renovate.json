@@ -9,6 +9,9 @@
     "automerge": true,
     "pinDigests": true
   },
+  "fleet": {
+    "automerge": true
+  },
   "helm-values": {
     "fileMatch": [
       ".*-values\\.yaml$"
