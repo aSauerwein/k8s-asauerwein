@@ -40,6 +40,9 @@ podDnsConfig:
   - 208.67.222.222
 dnsmasq:
   customDnsEntries:
-  - address=/pihole.sauerwein.se/10.255.100.10
+  - address=/pihole.sauerwein.se/192.168.10.10
+  - address=/jackett.sauerwein.se/192.168.10.10
+  - address=/sonarr.sauerwein.se/192.168.10.10
+  - address=/radarr.sauerwein.se/192.168.10.10
 extraEnvVars:
   QUERY_LOGGING: "false"
