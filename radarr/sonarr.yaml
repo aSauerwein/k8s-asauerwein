@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+  namespace: radarr
+  labels:
+    app: radarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: radarr
+  template:
+    metadata:
+      labels:
+        app: radarr
+    spec:
+      nodeSelector:
+        pvc: "true" # pvc only supported on rocky linux nodes
+      containers:
+      - name: radarr
+        image: linuxserver/radarr:5.0.3
+        volumeMounts:
+        - name: pv
+          mountPath: /config
+          subPath: radarr
+        - name: nfs
+          mountPath: /movies
+          subPath: Movies
+        - name: nfs
+          mountPath: /downloads
+          subPath: Downloads
+        env:
+        - name: PUID
+          value: "1032"
+        - name: PGID
+          value: "65536"
+        - name: TZ
+          value: Etc/UTC
+      securityContext:
+        # runAsUser: 1032
+        # runAsGroup: 65536
+        fsGroup: 65536
+      volumes:
+      - name: pv
+        persistentVolumeClaim:
+          claimName: radarr
+      - name: nfs
+        nfs:
+          server: media1.sauerwein.se
+          path: /volume1/video

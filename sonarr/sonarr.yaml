@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+  namespace: sonarr
+  labels:
+    app: sonarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonarr
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      nodeSelector:
+        pvc: "true" # pvc only supported on rocky linux nodes
+      containers:
+      - name: sonarr
+        image: linuxserver/sonarr:3.0.10
+        volumeMounts:
+        - name: pv
+          mountPath: /config
+          subPath: Sonarr
+        - name: nfs
+          mountPath: /tv
+          subPath: Shows
+        - name: nfs
+          mountPath: /downloads
+          subPath: Downloads
+        env:
+        - name: PUID
+          value: "1032"
+        - name: PGID
+          value: "65536"
+        - name: TZ
+          value: Etc/UTC
+      securityContext:
+        # runAsUser: 1032
+        # runAsGroup: 65536
+        fsGroup: 65536
+      volumes:
+      - name: pv
+        persistentVolumeClaim:
+          claimName: sonarr
+      - name: nfs
+        nfs:
+          server: media1.sauerwein.se
+          path: /volume1/video
