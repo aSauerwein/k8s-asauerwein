@@ -1,0 +1,9 @@
+# pushed without fleet
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: first-pool
+  namespace: metallb
+spec:
+  addresses:
+  - 192.168.10.10-192.16.10.29

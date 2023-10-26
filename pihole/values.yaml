@@ -28,7 +28,7 @@ ingress:
       - pihole.sauerwein.se
     secretName: pihole-cert
 serviceDns:
-  loadBalancerIP: 10.255.100.24
+  loadBalancerIP: 192.168.10.24
   annotations:
     metallb.universe.tf/allow-shared-ip: pihole-svc
   type: LoadBalancer
