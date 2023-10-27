@@ -3,7 +3,7 @@ image:
   # -- the repostory to pull the image from
   repository: "pihole/pihole"
   # -- the docker tag, if left empty it will get it from the chart's appVersion
-  tag: "2023.1@sha256:5d3f94aeaae60560d27310c5b234b711174de008f89a2a4c6f6110bd46a9f177"
+  tag: "2023.10.0"
   # -- the pull policy
   pullPolicy: IfNotPresent
 resources:
