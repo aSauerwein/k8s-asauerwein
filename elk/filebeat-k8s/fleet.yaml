@@ -3,6 +3,6 @@ helm:
   chart: filebeat
   repo: https://helm.elastic.co
   releaseName: filebeat
-  version: ^7.16.2
+  version: ^8.0.0
   valuesFiles: 
     - values.yaml
