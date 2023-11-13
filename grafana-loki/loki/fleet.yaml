@@ -3,7 +3,7 @@ helm:
   chart: loki
   repo: https://grafana.github.io/helm-charts
   releaseName: loki
-  version: ^3.0.0
+  version: ^5.0.0
   valuesFiles:
   - values.yaml
 
