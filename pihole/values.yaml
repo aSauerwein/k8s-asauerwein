@@ -44,5 +44,6 @@ dnsmasq:
   - address=/jackett.sauerwein.se/192.168.10.10
   - address=/sonarr.sauerwein.se/192.168.10.10
   - address=/radarr.sauerwein.se/192.168.10.10
+  - address-/media1.sauerwein.se/192.168.10.200
 extraEnvVars:
   QUERY_LOGGING: "false"
