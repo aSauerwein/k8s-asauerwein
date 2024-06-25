@@ -19,7 +19,7 @@ spec:
         app: thousandeyes
     spec:
       containers:
-      - image: thousandeyes/enterprise-agent@sha256:d6ef822622d27210e81b85176acb7e7e06636a37d42b49fc2fd38b5f58f34928
+      - image: thousandeyes/enterprise-agent@sha256:3cc6e2a7958929e0931096274bf1b543d8b1ebd798e8a14fbe0a5d6fe85e1859
         name: enterprise-agent
         command: 
         - /sbin/my_init
