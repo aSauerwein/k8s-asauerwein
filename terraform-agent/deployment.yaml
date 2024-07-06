@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: terraform-agent
+  name: terraform-agent
+  namespace: terraform
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: terraform-agent
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: terraform-agent
+    spec:
+      containers:
+      - image: hashicorp/tfc-agent:latest
+        name: tfc-agent
+        resources: {}
+        env:
+        - name: TFC_AGENT_NAME
+          value: "k8s"
+        envFrom:
+        - secretRef:
+            name: agent-token
