@@ -26,11 +26,7 @@ spec:
           mountPath: /config
           subPath: Sonarr
         - name: nfs
-          mountPath: /tv
-          subPath: Shows
-        - name: nfs
-          mountPath: /downloads
-          subPath: Downloads
+          mountPath: /data
         env:
         - name: PUID
           value: "1032"

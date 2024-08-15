@@ -26,11 +26,7 @@ spec:
           mountPath: /config
           subPath: radarr
         - name: nfs
-          mountPath: /movies
-          subPath: Movies
-        - name: nfs
-          mountPath: /downloads
-          subPath: Downloads
+          mountPath: /data
         env:
         - name: PUID
           value: "1032"
