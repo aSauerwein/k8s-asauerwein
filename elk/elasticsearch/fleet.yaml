@@ -3,6 +3,6 @@ helm:
   chart: elasticsearch
   repo: https://helm.elastic.co
   releaseName: elasticsearch
-  version: ^7.16.3
+  version: ^8.0.0
   valuesFiles: 
     - values.yaml
