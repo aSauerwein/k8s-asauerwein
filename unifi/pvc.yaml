@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: unifi-network-application
+  namespace: unifi
+  labels:
+    app: unifi-network-application
+spec:
+  accessModes:
+   - ReadWriteOnce
+  storageClassName: synology-iscsi-storage
+  resources:
+    requests:
+      storage: 5Gi
+      

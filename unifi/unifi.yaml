@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unifi-network-application
+  namespace: unifi
+  labels:
+    app: unifi-network-application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: unifi-network-application
+  template:
+    metadata:
+      labels:
+        app: unifi-network-application
+    spec:
+      nodeSelector:
+        pvc: "true" # pvc only supported on rocky linux nodes
+      containers:
+        - name: unifi-network-application
+          image: linuxserver/unifi-network-application:8.4.59
+          volumeMounts:
+            - name: pv
+              mountPath: /config
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: Etc/UTC
+            - name: MONGO_USER
+              value: unifi
+            - name: MONGO_PASS
+              value: ***
+            - name: MONGO_HOST
+              value: mongodb.unifi.svc.cluster.loca
+            - name: MONGO_PORT
+              value: "27017"
+            - name: MONGO_DBNAME
+              value: unifi
+            - name: MONGO_AUTHSOURCE
+              value: admin
+          # securityContext:
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+      volumes:
+        - name: pv
+          persistentVolumeClaim:
+            claimName: unifi-network-application

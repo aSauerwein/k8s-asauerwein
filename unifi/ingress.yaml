@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/ssl-redirect: "true"
+  labels:
+    app: unifi-network-application
+  name: unifi-network-application
+  namespace: unifi
+spec:
+  rules:
+  - host: unifi.sauerwein.se
+    http:
+      paths:
+      - backend:
+          service:
+            name: unifi-network-application
+            port:
+              name: http
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - unifi.sauerwein.se
+    secretName: unifi-cert
